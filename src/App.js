@@ -3,6 +3,9 @@ import {Route} from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import Jokes from "./components/Jokes";
+import SavedList from './components/SavedList';
+
+
 import './App.css';
 
 function App() {
@@ -14,7 +17,10 @@ function App() {
       <Route path ='/login' render={props =>(
         <Login {...props} />
       )}/>
-      <Route path='/jokes' component={Jokes}/>
+      <Route path='/jokes' render={props =>(
+        <Jokes {...props} />
+      )}/>
+      {/* <Route to='/saved' render={props => (<SavedList {...props} saved={saved}/>)}/> */}
     </div>
   )
 }
